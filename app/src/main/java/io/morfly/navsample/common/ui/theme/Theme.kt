@@ -1,4 +1,4 @@
-package io.morfly.navsample.ui.theme
+package io.morfly.navsample.common.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

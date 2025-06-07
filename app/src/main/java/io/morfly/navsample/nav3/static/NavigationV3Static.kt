@@ -1,23 +1,17 @@
-package io.morfly.navsample.nav3
+package io.morfly.navsample.nav3.static
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation3.runtime.NavEntry
-import androidx.navigation3.runtime.NavKey
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
-import io.morfly.navsample.ui.screens.ScreenA
-import io.morfly.navsample.ui.screens.ScreenB
-import kotlinx.serialization.Serializable
-
-@Serializable
-data object DestinationA : NavKey
-
-@Serializable
-data object DestinationB : NavKey
+import io.morfly.navsample.nav3.DestinationA
+import io.morfly.navsample.nav3.DestinationB
+import io.morfly.navsample.common.ui.screens.ScreenA
+import io.morfly.navsample.common.ui.screens.ScreenB
 
 @Composable
-fun NavigationV3(modifier: Modifier = Modifier) {
+fun NavigationV3Static(modifier: Modifier = Modifier) {
     val backStack = rememberNavBackStack(DestinationA)
 
     NavDisplay(
@@ -26,12 +20,12 @@ fun NavigationV3(modifier: Modifier = Modifier) {
         onBack = { backStack.removeLastOrNull() },
         entryProvider = { key ->
             when (key) {
-                DestinationA -> NavEntry(key) {
-                    ScreenA(onNext = { backStack.add(DestinationB) })
+                is DestinationA -> NavEntry(key) {
+                    ScreenA(onNext = { backStack.add(DestinationB(number = backStack.size + 1)) })
                 }
 
-                DestinationB -> NavEntry(key) {
-                    ScreenB()
+                is DestinationB -> NavEntry(key) {
+                    ScreenB(key.number)
                 }
 
                 else -> error("Unknown route: $key")

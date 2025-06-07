@@ -1,4 +1,4 @@
-package io.morfly.navsample.ui.screens
+package io.morfly.navsample.common.ui.screens
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
