@@ -13,12 +13,15 @@ import io.morfly.navsample.nav2.DestinationA
 import io.morfly.navsample.nav2.DestinationB
 import io.morfly.navsample.nav2.DestinationC
 
-
 @Composable
 fun NavigationV2Static(modifier: Modifier = Modifier) {
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = DestinationA, modifier = modifier) {
+    NavHost(
+        navController = navController,
+        startDestination = DestinationA,
+        modifier = modifier
+    ) {
         composable<DestinationA> {
             ScreenA(onNext = { navController.navigate(DestinationB(number = 2)) })
         }
