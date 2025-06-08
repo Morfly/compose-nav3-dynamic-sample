@@ -26,10 +26,10 @@ enum class NavImplementation(
 @Composable
 fun NavigationContainer(modifier: Modifier = Modifier) {
     // ===== Old Compose Navigation =====
-    // val nav = NavImplementation.Nav2Static
+    // val navImplementation = NavImplementation.Nav2Static
 
     // ===== Navigation 3 Static =====
-    // val nav = NavImplementation.Nav3Static
+    // val navImplementation = NavImplementation.Nav3Static
 
     // ===== Navigation 3 Dynamic =====
     val navImplementation = NavImplementation.Nav3Dynamic
