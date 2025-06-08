@@ -5,22 +5,25 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
-fun ScreenA(
+fun ScreenC(
     modifier: Modifier = Modifier,
+    number: Int,
     onNext: () -> Unit
 ) {
     GenericScreen(
         modifier = modifier,
-        name = "ScreenA",
+        name = "ScreenC",
+        number = number,
         onNext = onNext
     )
 }
 
 @Composable
 @Preview(showBackground = true)
-fun PreviewScreenA() {
-    ScreenA(
+fun PreviewScreenC() {
+    ScreenB(
         modifier = Modifier,
+        number = 5,
         onNext = {}
     )
 }

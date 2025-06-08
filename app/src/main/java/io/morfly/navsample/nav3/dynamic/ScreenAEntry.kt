@@ -16,9 +16,11 @@ class ScreenAEntry : DynamicNavEntry {
         content = {
             ScreenA(
                 onNext = {
-                    val entry = ScreenBEntry(DestinationB(backStack.size + 1))
-                    backStack.newEntry(entry)
-                    backStack += entry.key
+                    val screenBKey = DestinationB(number = 2)
+                    if (screenBKey !in backStack.entries) {
+                        backStack.newEntry(ScreenBEntry(screenBKey))
+                    }
+                    backStack += screenBKey
                 }
             )
         }

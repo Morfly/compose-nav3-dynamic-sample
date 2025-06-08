@@ -8,3 +8,6 @@ data object DestinationA : NavKey
 
 @Serializable
 data class DestinationB(val number: Int) : NavKey
+
+@Serializable
+data class DestinationC(val number: Int) : NavKey

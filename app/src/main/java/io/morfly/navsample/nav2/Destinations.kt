@@ -7,3 +7,6 @@ data object DestinationA
 
 @Serializable
 data class DestinationB(val number: Int)
+
+@Serializable
+data class DestinationC(val number: Int)

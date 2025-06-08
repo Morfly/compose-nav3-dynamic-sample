@@ -1,32 +1,30 @@
 package io.morfly.navsample.nav3.dynamic
 
-import androidx.compose.runtime.Composable
 import androidx.navigation3.runtime.NavEntry
 import androidx.navigation3.runtime.NavKey
-import io.morfly.navsample.common.ui.screens.ScreenB
+import io.morfly.navsample.common.ui.screens.ScreenC
 import io.morfly.navsample.nav3.DestinationB
 import io.morfly.navsample.nav3.DestinationC
 import kotlinx.serialization.Serializable
 
 @Serializable
-class ScreenBEntry(
-    override val key: DestinationB
+class ScreenCEntry(
+    override val key: DestinationC
 ) : DynamicNavEntry {
 
     override fun value(backStack: DynamicNavBackStack) = NavEntry<NavKey>(
         key = key,
         content = {
-            ScreenB(
+            ScreenC(
                 number = key.number,
                 onNext = {
-                    val screenCKey = DestinationC(number = key.number + 1)
-                    if (screenCKey !in backStack.entries) {
-                        backStack.newEntry(ScreenCEntry(screenCKey))
+                    val screenBKey = DestinationB(number = key.number + 1)
+                    if (screenBKey !in backStack.entries) {
+                        backStack.newEntry(ScreenBEntry(screenBKey))
                     }
-                    backStack += screenCKey
+                    backStack += screenBKey
                 }
             )
         }
     )
 }
-

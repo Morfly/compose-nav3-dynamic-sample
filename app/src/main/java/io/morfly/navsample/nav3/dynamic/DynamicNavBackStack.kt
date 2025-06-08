@@ -21,9 +21,7 @@ class DynamicNavBackStack(
         get() = mutableEntries
 
     fun newEntry(entry: DynamicNavEntry) {
-        if (entry.key !in mutableEntries){
-            mutableEntries[entry.key] = entry
-        }
+        mutableEntries[entry.key] = entry
     }
 }
 
