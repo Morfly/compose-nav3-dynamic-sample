@@ -41,7 +41,9 @@ class DynamicNavBackStack(
     }
 }
 
-fun DynamicNavBackStackSaver(backStack: NavBackStack): Saver<DynamicNavBackStack, *> = Saver(
+fun DynamicNavBackStackSaver(
+    internalBackStack: NavBackStack
+): Saver<DynamicNavBackStack, *> = Saver(
     save = { it.dynamicEntries.toMutableMap() },
-    restore = { DynamicNavBackStack(backStack, it) },
+    restore = { DynamicNavBackStack(internalBackStack, it) },
 )
