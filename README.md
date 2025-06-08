@@ -1,4 +1,4 @@
-# Compose Navigation 3 - Dynamic Entries Sample
+# Compose Navigation 3 - Dynamic Destinations Sample
 
 ## Project structure
 
