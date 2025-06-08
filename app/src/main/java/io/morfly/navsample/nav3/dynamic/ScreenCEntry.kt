@@ -19,7 +19,7 @@ class ScreenCEntry(
                 number = key.number,
                 onNext = {
                     val screenBKey = DestinationB(number = key.number + 1)
-                    if (screenBKey !in backStack.entries) {
+                    if (screenBKey !in backStack.dynamicEntries) {
                         backStack.newEntry(ScreenBEntry(screenBKey))
                     }
                     backStack += screenBKey

@@ -28,7 +28,7 @@ fun NavigationV3Dynamic(modifier: Modifier = Modifier) {
             when (key) {
                 DestinationA -> ScreenAEntry().value(backStack)
                 else -> {
-                    val entry = backStack.entries[key]
+                    val entry = backStack.dynamicEntries[key]
                     entry?.value(backStack) ?: error("Unknown route: $key")
                 }
             }

@@ -14,18 +14,18 @@ interface DynamicNavEntry {
 
 class DynamicNavBackStack(
     private val internalBackStack: NavBackStack,
-    internal val mutableEntries: MutableMap<NavKey, DynamicNavEntry> = mutableMapOf()
+    private val entries: MutableMap<NavKey, DynamicNavEntry> = mutableMapOf()
 ) : MutableList<NavKey> by internalBackStack {
 
-    val entries: Map<NavKey, DynamicNavEntry>
-        get() = mutableEntries
+    val dynamicEntries: Map<NavKey, DynamicNavEntry>
+        get() = entries
 
     fun newEntry(entry: DynamicNavEntry) {
-        mutableEntries[entry.key] = entry
+        entries[entry.key] = entry
     }
 }
 
 fun DynamicNavBackStackSaver(backStack: NavBackStack): Saver<DynamicNavBackStack, *> = Saver(
-    save = { it.mutableEntries },
+    save = { it.dynamicEntries.toMutableMap() },
     restore = { DynamicNavBackStack(backStack, it) },
 )
