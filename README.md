@@ -6,14 +6,14 @@
 
 This repository contains a sample app that demonstrates how to implement dynamic destinations with [Jetpack Navigation 3](https://developer.android.com/guide/navigation/navigation-3) library.
 
-Typically, in Navigation 3 and its older version (sometimes referred to as Navigation 2), destinations are declared statically. This means all possible destinations must be specified upfront, at the moment their respective navigation container — `NavDisplay` in Navigation 3 or `NavHost` in Navigation 2 — is used in code.
+Typically, in Navigation 3 and its older version (sometimes referred to as Navigation 2), destinations are declared statically. This means all possible destinations must be specified upfront, at the moment their respective navigation container (`NavDisplay` or `NavHost`) is used in code.
 
 But what if you don't know in advance what navigation destinations your app will have? While this is a less common use case, sometimes destinations will be known only at the moment the actual navigation happens. In this case, they must be registered dynamically, outside of the navigation graph declaration.
 
-Learn more about it in the [Dynamic destinations with Jetpack Navigation 3](https://medium.com/@morfly/dynamic-destinations-with-jetpack-navigation-3-41b851eef933) blog post.
+Learn more about it in the [Dynamic destinations with Jetpack Navigation 3](https://morfly.medium.com/dynamic-destinations-with-jetpack-navigation-3-41b851eef933) blog post.
 
 ## Project structure
-This repository explores dynamic destinations in Navigation 3 and how they are compared with the more conventinal usages of the Compose Navigation library. Therefore, the project includes **3** different implementations of the same navigation flow:
+This repository explores dynamic destinations in Navigation 3 and how they are compared with the more conventinal usages of the Compose Navigation library. The project includes **3** different implementations of the same navigation flow:
 
 - [**nav2/static**](app/src/main/java/io/morfly/navsample/nav2/static/NavigationV2Static.kt) — example of using the old version of Compose Navigation library with statically declared destinations.
 - [**nav3/static**](app/src/main/java/io/morfly/navsample/nav3/static/NavigationV3Static.kt) — example of using Navigation 3 with statically declared destinations.
@@ -41,6 +41,8 @@ fun NavigationContainer(modifier: Modifier = Modifier) {
 ```
 
 ## Demo
+This is a simplistic Android demo app that has 3 screens and allows navigation between them including arguments.
+
 ![Sample app demo](demo.png)
 
 ## License
