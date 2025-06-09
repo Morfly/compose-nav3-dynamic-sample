@@ -1,7 +1,7 @@
 # Compose Navigation 3 - Dynamic Destinations Sample
 
 <p align="center">
-  <img src="cover.png" width="185" height="auto">
+  <img src="cover_img.png" width="185" height="auto">
 </p>
 
 This repository contains a sample app that demonstrates how to implement dynamic destinations with [Jetpack Navigation 3](https://developer.android.com/guide/navigation/navigation-3) library.
