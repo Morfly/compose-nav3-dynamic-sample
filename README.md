@@ -1,7 +1,7 @@
 # Compose Navigation 3 - Dynamic Destinations Sample
 This repository contains a sample app that demonstrates how to implement dynamic destinations with [Jetpack Navigation 3](https://developer.android.com/guide/navigation/navigation-3) library.
 
-Typically, in both Navigation 3 and its older version (sometimes referred to as Navigation 2), destinations are declared statically. This means all possible destinations must be specified upfront, at the moment their respective navigation container — `NavDisplay` in Navigation 3 or `NavHost` in Navigation 2 — is used in code.
+Typically, in Navigation 3 and its older version (sometimes referred to as Navigation 2), destinations are declared statically. This means all possible destinations must be specified upfront, at the moment their respective navigation container — `NavDisplay` in Navigation 3 or `NavHost` in Navigation 2 — is used in code.
 
 But what if you don't know in advance what navigation destinations your app will have? While this is a less common use case, sometimes destinations will be known only at the moment the actual navigation happens. In this case, they must be registered dynamically, outside of the navigation graph declaration.
 
